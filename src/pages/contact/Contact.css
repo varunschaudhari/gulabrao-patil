@@ -1,0 +1,125 @@
+.simple-contact-container {
+    background-color: #fcf9f8;
+    color: #1c1b1b;
+    min-height: calc(100vh - 100px);
+}
+
+.contact-header-simple {
+    text-align: left;
+    max-width: 800px;
+}
+
+.simple-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .simple-contact-grid {
+        grid-template-columns: 4fr 8fr;
+    }
+}
+
+.info-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 4px;
+}
+
+.border-top-primary {
+    border-top: 4px solid var(--primary-color);
+}
+
+.border-top-secondary {
+    border-top: 4px solid var(--secondary-color);
+}
+
+.icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-primary-light {
+    background-color: rgba(174, 49, 0, 0.1);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e2bfb5;
+    margin: 1.5rem 0;
+}
+
+.simple-social-link {
+    font-weight: 800;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #f6f3f2;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.simple-social-link:hover {
+    background: #e2bfb5;
+}
+
+.simple-contact-form {
+    padding: 3rem;
+}
+
+.simple-form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.simple-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #5a413a;
+    margin-bottom: 0.5rem;
+}
+
+.simple-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e2bfb5;
+    background: #fcf9f8;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #1c1b1b;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.simple-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.btn-simple-submit {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 800;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-simple-submit:hover {
+    background-color: #852400; /* darker saffron */
+}

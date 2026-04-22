@@ -1,0 +1,9 @@
+export { Home } from './home';
+export { About } from './about';
+export { Journey } from './journey';
+export { Portfolio } from './portfolio';
+export { Work } from './work';
+export { News } from './news';
+export { MyView } from './myView';
+export { Gallery } from './gallery';
+export { Contact } from './contact';

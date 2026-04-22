@@ -1,0 +1,454 @@
+/* Base Layout */
+.work-container {
+    background-color: #fcf9f8;
+    color: #1c1b1b;
+    overflow-x: hidden;
+}
+
+.text-dark { color: #1c1b1b; }
+.bg-gray-light { background-color: #f6f3f2; }
+.bg-gray-lighter { background-color: #e5e2e1; }
+.uppercase { text-transform: uppercase; }
+
+/* Global Buttons */
+.btn-solid-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-solid-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.btn-solid-primary:active {
+    transform: scale(0.95);
+}
+
+
+/* 1. Hero Section */
+.work-hero {
+    padding: 6rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.work-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .work-hero-grid {
+        grid-template-columns: 7fr 5fr;
+    }
+}
+
+.work-title {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.title-divider {
+    height: 8px;
+    width: 6rem;
+    background-color: var(--primary-color);
+    margin-top: 1.5rem;
+}
+
+.work-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #5a413a;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.work-hero-image-wrapper {
+    position: relative;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.hero-img-box {
+    aspect-ratio: 4/5;
+    background-color: #ebe7e7;
+    overflow: hidden;
+}
+
+.years-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    max-width: 200px;
+}
+
+@media (min-width: 768px) {
+    .years-badge {
+        bottom: -1.5rem;
+        left: -1.5rem;
+    }
+}
+
+.years-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.years-text {
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* 2. Impact at a Glance */
+.impact-section {
+    padding: 6rem 0;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .impact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .impact-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.impact-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.highlight-card {
+    position: relative;
+    z-index: 10;
+    transform: scale(1.05);
+}
+.highlight-card:hover {
+    transform: scale(1.08); /* slightly more on hover */
+}
+
+.impact-number {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.impact-label {
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    color: #5a413a;
+}
+
+
+/* 3. Major Projects */
+.projects-section {
+    border-bottom: 1px solid #e2bfb5;
+}
+
+.projects-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Hide scrollbar for clean look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+.projects-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    cursor: pointer;
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+    .project-card {
+        flex: 0 0 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-card {
+        flex: 0 0 31%;
+    }
+}
+
+.project-img-wrap {
+    aspect-ratio: 16/9;
+    background-color: #ebe7e7;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.group-hover-scale {
+    transition: transform 0.7s ease;
+}
+
+.project-card:hover .group-hover-scale {
+    transform: scale(1.1);
+}
+
+.project-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #1c1b1b;
+    transition: color 0.3s;
+}
+
+.project-card:hover .group-hover-text {
+    color: var(--primary-color);
+}
+
+.project-desc {
+    color: #5a413a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-line {
+    height: 4px;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.project-card:hover .project-line {
+    width: 100%;
+}
+
+
+/* 4. Awards & Recognition */
+.awards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .awards-grid { grid-template-columns: 1fr 2fr; }
+}
+
+.awards-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .awards-cards-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.award-card {
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.border-left-primary { border-left: 4px solid var(--primary-color); }
+.border-left-secondary { border-left: 4px solid var(--secondary-color); }
+
+.award-name {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #1c1b1b;
+    margin-bottom: 0.5rem;
+}
+
+.award-org {
+    font-size: 0.875rem;
+    color: #5a413a;
+}
+
+
+/* 5. Testimonials */
+.testimonials-section {
+    overflow: hidden;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+.testimonial-card {
+    position: relative;
+    padding: 3rem;
+}
+
+.offset-y {
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .offset-y { transform: translateY(3rem); }
+}
+
+.quote-icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1c1b1b;
+    line-height: 1.6;
+}
+
+.author-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-img-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e5e2e1;
+    overflow: hidden;
+}
+
+.author-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1c1b1b;
+}
+
+.author-role {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+/* 6. CTA Section */
+.work-cta {
+    background-color: var(--primary-color);
+    padding: 5rem 0;
+    color: white;
+}
+
+.cta-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+}
+
+.cta-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-solid-white {
+    background-color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.btn-solid-white:hover {
+    background-color: #f0edec;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-white:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
